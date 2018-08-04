@@ -15,7 +15,7 @@
     "require": {
         "php": ">=5.4",
         "composer/installers": "^1.5.0",
-        "anklimsk/cakephp-basic-functions": "^0.4"
+        "anklimsk/cakephp-basic-functions": "*"
     },
     "support": {
         "source": "https://github.com/anklimsk/cakephp-extended-test"
