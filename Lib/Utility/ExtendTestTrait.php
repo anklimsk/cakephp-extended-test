@@ -13,11 +13,6 @@ App::import(
     'CakeExtendTest.PeekAndPoke',
     ['file' => 'PeekAndPoke' . DS . 'autoload.php']
 );
-App::import(
-    'Vendor',
-    'CakeExtendTest.PHPHtmlParser',
-    ['file' => 'PHPHtmlParser' . DS . 'autoload.php']
-);
 
 /**
  * ExtendTestTrait trait
@@ -535,27 +530,5 @@ trait ExtendTestTrait
 
         $result = runkit_function_redefine('move_uploaded_file', '$filename,$destination', 'return copy($filename, $destination);');
         $testCase->assertTrue($result);
-    }
-
-    /**
-     * Return number of items from HTML by CSS selector
-     *
-     * @param string $content HTML for parsing
-     * @param string $selector CSS selector for parsing
-     * @return int|bool Return number of items or False on failure.
-     */
-    public function getNumberItemsByCssSelector($content = null, $selector = null)
-    {
-        if (empty($content) || empty($selector) ||
-            !is_string($content) || !is_string($selector)) {
-            return false;
-        }
-
-        $dom = new PHPHtmlParser\Dom();
-        $dom->load($content);
-        $items = $dom->find($selector);
-        $result = count($items);
-
-        return $result;
     }
 }
