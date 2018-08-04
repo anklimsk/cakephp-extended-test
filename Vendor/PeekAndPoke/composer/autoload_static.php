@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf77f45dfae3732fa842899ea290af393
+class ComposerStaticInite91ddabe58fe4ffa3d4c3489c4d980c0
 {
     public static $classMap = array (
         'SebastianBergmann\\PeekAndPoke\\BadAttributeAccessException' => __DIR__ . '/..' . '/sebastian/peek-and-poke/src/BadAttributeAccessException.php',
@@ -17,7 +17,7 @@ class ComposerStaticInitf77f45dfae3732fa842899ea290af393
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitf77f45dfae3732fa842899ea290af393::$classMap;
+            $loader->classMap = ComposerStaticInite91ddabe58fe4ffa3d4c3489c4d980c0::$classMap;
 
         }, null, ClassLoader::class);
     }

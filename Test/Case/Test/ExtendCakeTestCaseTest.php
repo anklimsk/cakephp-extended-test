@@ -3,7 +3,7 @@ App::uses('ExtendCakeTestCase', 'CakeExtendTest.Test');
 App::import(
     'Vendor',
     'CakeExtendTest.PeekAndPoke',
-    ['file' => 'autoload.php']
+    ['file' => 'PeekAndPoke' . DS . 'autoload.php']
 );
 
 /**

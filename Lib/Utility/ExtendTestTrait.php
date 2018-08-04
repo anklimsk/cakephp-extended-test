@@ -12,7 +12,7 @@ App::uses('PhpReader', 'Configure');
 App::import(
     'Vendor',
     'CakeExtendTest.PeekAndPoke',
-    ['file' => 'autoload.php']
+    ['file' => 'PeekAndPoke' . DS . 'autoload.php']
 );
 
 /**
