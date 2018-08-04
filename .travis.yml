@@ -7,7 +7,7 @@ php:
 env:
   global:
     - PLUGIN_NAME=CakeExtendTest
-    - REQUIRE="anklimsk/cakephp-extended-test:* anklimsk/cakephp-basic-functions:^0.4"
+    - REQUIRE=""
     - DB=mysql
     - CAKE_REF=2.10.11
 
@@ -24,6 +24,7 @@ matrix:
 before_script:
   - git clone -b master https://github.com/FriendsOfCake/travis.git --depth 1 ../travis
   - travis_wait ../travis/before_script.sh
+  - cat ./composer.json
 
 script:
   - ../travis/script.sh
