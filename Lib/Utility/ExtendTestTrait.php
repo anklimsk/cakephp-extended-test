@@ -8,6 +8,7 @@
  */
 
 App::uses('CakeSession', 'Model/Datasource');
+App::uses('PhpReader', 'Configure');
 App::import(
     'Vendor',
     'CakeExtendTest.PeekAndPoke',
