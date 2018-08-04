@@ -17,7 +17,6 @@ matrix:
       env:
         - CODECOVERAGE=1
 
-
 before_script:
   - git clone -b master https://github.com/FriendsOfCake/travis.git --depth 1 ../travis
   - travis_wait ../travis/before_script.sh
@@ -29,6 +28,8 @@ script:
 
 after_success:
   - ../travis/after_success.sh
+  - ls -R
+  - cat clover.xml
 
 notifications:
   email: false
