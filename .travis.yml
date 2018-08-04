@@ -7,8 +7,10 @@ php:
 env:
   global:
     - PLUGIN_NAME=CakeExtendTest
-    - REQUIRE=""
     - CAKE_REF=2.10.11
+    - REQUIRE=""
+    - DB=mysql
+    - COMPOSER_HOME=/home/travis/.composer
 
 matrix:
   include:
