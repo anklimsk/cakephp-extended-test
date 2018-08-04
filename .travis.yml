@@ -8,7 +8,7 @@ env:
   global:
     - PLUGIN_NAME=CakeExtendTest
     - CAKE_REF=2.10.11
-    - REQUIRE=""
+    - REQUIRE="anklimsk/cakephp-basic-functions:^0.4"
     - DB=mysql
     - COMPOSER_HOME=/home/travis/.composer
 
