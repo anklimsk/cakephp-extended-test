@@ -10,10 +10,11 @@
         }
     ],
     "config": {
-        "vendor-dir": "Vendor"
+        "vendor-dir": "Vendor/"
     },
     "require": {
         "php": ">=5.4",
+        "composer/installers": "^1.5.0",
         "sebastian/peek-and-poke": "1.0.x-dev"
     },
     "support": {
