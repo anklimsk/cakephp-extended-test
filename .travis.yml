@@ -24,7 +24,6 @@ matrix:
 before_script:
   - git clone -b master https://github.com/FriendsOfCake/travis.git --depth 1 ../travis
   - travis_wait ../travis/before_script.sh
-  - cat ./composer.json
 
 script:
   - ../travis/script.sh
