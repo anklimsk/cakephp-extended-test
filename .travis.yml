@@ -24,7 +24,7 @@ matrix:
 before_script:
   - git clone -b master https://github.com/FriendsOfCake/travis.git --depth 1 ../travis
   - travis_wait ../travis/before_script.sh
-  - ls -R
+  - sed -i -r "s/(Configure::write\('Security\.salt', ')[0-9a-z]+('\);)/\1d1c97797953ed55c54ba6037158d2b0c3bf21471\2/i" /home/travis/build/anklimsk/cakephp/app/Config/core.php
 
 script:
   - ../travis/script.sh
