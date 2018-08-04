@@ -8,11 +8,10 @@ env:
   global:
     - PLUGIN_NAME=CakeExtendTest
     - REQUIRE=""
+    - DB=mysql
 
   matrix:
     - CAKE_REF=2.10.11
-    - REQUIRE=""
-    - DB=mysql
 
 matrix:
   include:
