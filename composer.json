@@ -1,0 +1,25 @@
+{
+    "name": "anklimsk/cakephp-extended-test",
+    "description": "Extended test tools for CakePHP",
+    "type": "cakephp-plugin",
+    "homepage": "https://github.com/anklimsk/cakephp-extended-test",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Klimov"
+        }
+    ],
+    "config": {
+        "vendor-dir": "Vendor"
+    },
+    "require": {
+        "php": ">=5.4",
+        "sebastian/peek-and-poke": "1.0.x-dev"
+    },
+    "support": {
+        "source": "https://github.com/anklimsk/cakephp-extended-test"
+    },
+    "extra": {
+        "installer-name": "CakeExtendTest"
+    }
+}
