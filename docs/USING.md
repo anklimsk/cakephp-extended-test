@@ -8,7 +8,7 @@
 - from `app/Plugin/CakeExtendTest/Test/AllTestsTest.php` to `app/Test/Case`
 2. If necessary, edit the `AppCake TestCase.php` and `AppController TestCase.php` files.
 3. For baking test case use cake console command `cake CakeExtendTest.bake`. Analog 
-	of command `cake bake test`.
+    of command `cake bake test`.
 
 ## Testing a non-public method or property
 
@@ -26,12 +26,12 @@ where:
 1. Create View test on controller test:
 ```php
 $opt = [
-	'method' => 'GET',
-	'return' => 'contents',
+    'method' => 'GET',
+    'return' => 'contents',
 ];
 $url = 'some_controller/some_action/some_param';
 $view = $this->testAction($url, $opt);
-$numTableRows = $this->getNumberItemsByCssSelector($view, 'div#content div.container table > tbody > tr');			
+$numTableRows = $this->getNumberItemsByCssSelector($view, 'div#content div.container table > tbody > tr');
 $expected = 2;
 $this->assertData($expected, $numTableRows);
 ```
@@ -53,15 +53,15 @@ $config['TestKey'] = ['SomeKey' => 'Some data...'];
  * Information about the logged in user.
  *
  * @var array
- */		
+ */
 protected $userInfo = [
-	'user' => 'Хвощинский В.В.',
-	'role' => USER_ROLE_USER,
-	'prefix' => '',
-	'id' => '7',
-	'includedFields' => [
-		CAKE_LDAP_LDAP_ATTRIBUTE_OBJECT_GUID => '8c149661-7215-47de-b40e-35320a1ea508'
-	]
+    'user' => 'Хвощинский В.В.',
+    'role' => USER_ROLE_USER,
+    'prefix' => '',
+    'id' => '7',
+    'includedFields' => [
+        CAKE_LDAP_LDAP_ATTRIBUTE_OBJECT_GUID => '8c149661-7215-47de-b40e-35320a1ea508'
+    ]
 ];
 ```
 
@@ -73,20 +73,20 @@ protected $userInfo = [
  * @return void
  */
 public function setUp() {
-	$this->setDefaultUserInfo($this->userInfo);
-	parent::setUp();
-	  				
-	....
+    $this->setDefaultUserInfo($this->userInfo);
+    parent::setUp();
+      
+    ....
 }
 ```
 
 4. For change user role on fly:
 ```php
 $userInfo = [
-	'role' => USER_ROLE_USER | USER_ROLE_ADMIN,
-	'prefix' => 'admin',
+    'role' => USER_ROLE_USER | USER_ROLE_ADMIN,
+    'prefix' => 'admin',
 ];
-$this->applyUserInfo($userInfo);	
+$this->applyUserInfo($userInfo);
 ```
 
 5. Replace in files `AppCakeTestCase.php` and `AppControllerTestCase.php`:
