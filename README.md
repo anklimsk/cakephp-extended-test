@@ -20,6 +20,7 @@ Extended test tools for CakePHP
 ```php
 CakePlugin::load('CakeExtendTest');
 ```
+
 ## Using
 
 [Using this plugin](docs/USING.md)
