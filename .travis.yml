@@ -9,7 +9,7 @@ env:
     - PLUGIN_NAME=CakeExtendTest
     - REQUIRE=""
     - DB=mysql
-    - CAKE_VERSION=2.10
+    - CAKE_VERSION=2
 
 matrix:
   include:
