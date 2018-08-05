@@ -505,4 +505,40 @@ class ExtendTestTraitTest extends CakeTestCase
         $expected = 'Some protected method';
         $this->assertEquals($expected, $result);
     }
+
+    /**
+     * testGetNumberItemsByCssSelector method
+     *
+     * @return void
+     */
+    public function testGetNumberItemsByCssSelector()
+    {
+        $html = <<<EOD
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Test</title>		
+	</head>
+	<body>
+	<div class="some_class">1</div>
+	<div class="some_class">2</div>
+	<div class="other_class">None</div>
+	</body>
+</html>
+EOD;
+        $result = $this->_targetObject->getNumberItemsByCssSelector('', 'div.some_class');
+        $this->assertFalse($result);
+
+        $result = $this->_targetObject->getNumberItemsByCssSelector($html, '');
+        $this->assertFalse($result);
+
+        $result = $this->_targetObject->getNumberItemsByCssSelector($html, 'div.some_class');
+        $expected = 2;
+        $this->assertEquals($expected, $result);
+
+        $result = $this->_targetObject->getNumberItemsByCssSelector($html, 'span.some_class');
+        $expected = 0;
+        $this->assertEquals($expected, $result);
+    }
 }
