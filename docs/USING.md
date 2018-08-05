@@ -25,15 +25,15 @@ where:
 
 1. Create View test on controller test:
 ```php
-    $opt = [
-			'method' => 'GET',
-			'return' => 'contents',
-		];
-		$url = 'some_controller/some_action/some_param';
-		$view = $this->testAction($url, $opt);
-		$numTableRows = $this->getNumberItemsByCssSelector($view, 'div#content div.container table > tbody > tr');			
-		$expected = 2;
-		$this->assertData($expected, $numTableRows);
+$opt = [
+	'method' => 'GET',
+	'return' => 'contents',
+];
+$url = 'some_controller/some_action/some_param';
+$view = $this->testAction($url, $opt);
+$numTableRows = $this->getNumberItemsByCssSelector($view, 'div#content div.container table > tbody > tr');			
+$expected = 2;
+$this->assertData($expected, $numTableRows);
 ```
 
 ## Applying testing configuration of application from file
@@ -41,7 +41,7 @@ where:
 1. Copy configuration file from `app/Plugin/CakeExtendTest/Test/TestConfig.php` to `app/Test`.
 2. Edit config file and configure application for testing, e.g.:
 ```php
-	$config['TestKey'] = ['SomeKey' => 'Some data...'];
+$config['TestKey'] = ['SomeKey' => 'Some data...'];
 ```
 
 ## Applying testing information of logged-on user from array
@@ -54,15 +54,15 @@ where:
  *
  * @var array
  */		
-	protected $userInfo = [
-		'user' => 'Хвощинский В.В.',
-		'role' => USER_ROLE_USER,
-		'prefix' => '',
-		'id' => '7',
-		'includedFields' => [
-			CAKE_LDAP_LDAP_ATTRIBUTE_OBJECT_GUID => '8c149661-7215-47de-b40e-35320a1ea508'
-		]
-	];
+protected $userInfo = [
+	'user' => 'Хвощинский В.В.',
+	'role' => USER_ROLE_USER,
+	'prefix' => '',
+	'id' => '7',
+	'includedFields' => [
+		CAKE_LDAP_LDAP_ATTRIBUTE_OBJECT_GUID => '8c149661-7215-47de-b40e-35320a1ea508'
+	]
+];
 ```
 
 3. Add call `setDefaultUserInfo()` in method `setUp()` of test:
@@ -72,23 +72,25 @@ where:
  *
  * @return void
  */
-	public function setUp() {
-		$this->setDefaultUserInfo($this->userInfo);
-		parent::setUp();
-		  				
-		....
-	}
+public function setUp() {
+	$this->setDefaultUserInfo($this->userInfo);
+	parent::setUp();
+	  				
+	....
+}
 ```
 
 4. For change user role on fly:
-	$userInfo = [
-		'role' => USER_ROLE_USER | USER_ROLE_ADMIN,
-		'prefix' => 'admin',
-	];
-	$this->applyUserInfo($userInfo);	
-	
+```php
+$userInfo = [
+	'role' => USER_ROLE_USER | USER_ROLE_ADMIN,
+	'prefix' => 'admin',
+];
+$this->applyUserInfo($userInfo);	
+```
+
 5. Replace in files `AppCakeTestCase.php` and `AppControllerTestCase.php`:
-	`App::uses('AppTestTrait', 'CakeExtendTest.Test');` to `App::uses('AppTestTrait', 'Test');`
+`App::uses('AppTestTrait', 'CakeExtendTest.Test');` to `App::uses('AppTestTrait', 'Test');`
 
 ## Testing Flash messages
 
