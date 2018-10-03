@@ -18,6 +18,9 @@
         "source": "https://github.com/anklimsk/cakephp-extended-test"
     },
     "extra": {
-        "installer-name": "CakeExtendTest"
+        "installer-name": "CakeExtendTest",
+        "branch-alias": {
+            "dev-master": "0.8.x-dev"
+        }
     }
 }
